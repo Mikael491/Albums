@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Text, AppRegistry } from 'react-native';
+import { AppRegistry } from 'react-native';
+import Header from './src/components/header';
 
 // const App = () =>
 //    (
@@ -8,9 +9,7 @@ import { Text, AppRegistry } from 'react-native';
 
 class HelloWinta extends Component {
   render() {
-    return (
-      <Text>Hey Winta!</Text>
-    );
+    return <Header />;
   }
 }
 
