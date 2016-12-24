@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
+import axios from 'axios';
 
 class AlbumList extends Component {
   componentWillMount() {
-    // console.log('Testing component mount for album list...');
+    axios.get('https://itunes.apple.com/search?term=jack+johnson')
+      .then(response => console.log(response));
   }
 
   render() {
