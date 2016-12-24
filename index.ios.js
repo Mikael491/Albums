@@ -7,10 +7,10 @@ import Header from './src/components/header';
 //     <Text>Hey Winta!</Text>
 //   );
 
-class HelloWinta extends Component {
+class App extends Component {
   render() {
-    return <Header />;
+    return <Header headerText={'Albums'} />;
   }
 }
 
-AppRegistry.registerComponent('albums', () => HelloWinta);
+AppRegistry.registerComponent('albums', () => App);
