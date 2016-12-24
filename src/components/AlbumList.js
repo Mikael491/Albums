@@ -6,15 +6,20 @@ class AlbumList extends Component {
   state = { albums: [] };
 
   componentWillMount() {
-    axios.get('https://itunes.apple.com/search?term=jack+johnson')
-      .then(response => this.setState({ albums: response.data }));
+    axios.get('https://itunes.apple.com/lookup?id=271256&entity=album')
+      .then(response => this.setState({ albums: response.data.results }));
+  }
+
+  renderAlbums() {
+    return this.state.albums.map((album) =>
+    <Text>{ album.collectionName || album.artistName }</Text>);
   }
 
   render() {
     console.log(this.state);
     return (
       <View>
-        <Text>AlbumList!</Text>
+        { this.renderAlbums() }
       </View>
     );
   }
