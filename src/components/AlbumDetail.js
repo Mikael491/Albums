@@ -1,11 +1,12 @@
 import React from 'react';
 import { Text } from 'react-native';
+import Card from './Card';
 
 const AlbumDetail = (object) => {
   return (
-      <Text>
-        { object.album.collectionName || object.album.artistName }
-      </Text>
+    <Card>
+      <Text>{ object.album.collectionName || object.album.artistName }</Text>
+    </Card>
   );
 };
 
