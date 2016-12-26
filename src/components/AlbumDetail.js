@@ -1,12 +1,13 @@
 import React from 'react';
-import { Text, View, Image } from 'react-native';
+import { Text, View, Image, Linking } from 'react-native';
 import Card from './Card';
 import CardSection from './CardSection';
 import Button from './Button';
 
 const AlbumDetail = ({ album }) => {
   const { textViewStyle, thumbnailStyle, albumArtStyle, albumTitleStyle } = styles;
-  const { collectionName, artistName, artworkUrl100 } = album;
+  const { collectionName, artistName, artworkUrl100, collectionViewUrl, artistLinkUrl } = album;
+  const url = collectionViewUrl || artistLinkUrl;
 
   return (
     <Card>
@@ -24,12 +25,13 @@ const AlbumDetail = ({ album }) => {
       </CardSection>
       <CardSection>
         <Image
+        /* TODO: handle http image apearances */
           style={albumArtStyle}
           source={{ uri: 'https://iscale.iheart.com/catalog/artist/44512' }}
         />
       </CardSection>
       <CardSection>
-        <Button />
+        <Button buttonTapped={() => Linking.openURL(url)} />
       </CardSection>
     </Card>
   );
