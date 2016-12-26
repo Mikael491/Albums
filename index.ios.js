@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { AppRegistry } from 'react-native';
+import { AppRegistry, View } from 'react-native';
 import Header from './src/components/header';
+import AlbumList from './src/components/AlbumList';
 
 // const App = () =>
 //    (
@@ -9,7 +10,12 @@ import Header from './src/components/header';
 
 class App extends Component {
   render() {
-    return <Header headerText={'Albums'} />;
+    return (
+      <View style={{ flex: 1 }}>
+        <Header headerText={'Albums'} />
+        <AlbumList />
+      </View>
+    );
   }
 }
 
