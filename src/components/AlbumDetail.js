@@ -2,6 +2,7 @@ import React from 'react';
 import { Text, View, Image } from 'react-native';
 import Card from './Card';
 import CardSection from './CardSection';
+import Button from './Button';
 
 const AlbumDetail = ({ album }) => {
   const { textViewStyle, thumbnailStyle, albumArtStyle, albumTitleStyle } = styles;
@@ -26,6 +27,9 @@ const AlbumDetail = ({ album }) => {
           style={albumArtStyle}
           source={{ uri: 'https://iscale.iheart.com/catalog/artist/44512' }}
         />
+      </CardSection>
+      <CardSection>
+        <Button />
       </CardSection>
     </Card>
   );
